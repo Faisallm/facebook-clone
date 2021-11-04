@@ -1,0 +1,754 @@
+/* applicable to all the css elements */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-color: #efefef;
+    --nav-color: #1876f2;
+    --bg-color: #fff;
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+}
+
+.dark-theme {
+    --body-color: #0a0a0a;
+    --nav-color: #000;
+    --bg-color: #000;
+}
+
+/* give the background a color */
+body {
+    /* light gray color */
+    background: var(--body-color);
+    transition: background 0.3s;
+}
+
+nav {
+    /* flex-direction: horizontal */
+    display: flex;
+    /* crossAxisAlignment: CrossAxisAlignment.center */
+    align-items: center;
+    /* mainAxisAlignment: MainAxisAlignment.spaceBetween */
+    justify-content: space-between;
+    /* facebook blue color */
+    background: var(--nav-color);
+    /* top and bottom: 5px */
+    /* left and right: 5% */
+    padding: 5px 5%;
+    /* navigation bar does not scroll. */
+    position: sticky;
+    top: 0;
+    /* overlay other elements */
+    z-index: 100;
+}
+
+.nav-left .logo {
+    width: 160px;
+    margin-right: 45px;
+}
+
+.nav-left, .nav-right {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+}
+
+.nav-left ul li {
+
+    /* remove the bullet points */
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav-left ul li img {
+    width: 28px;
+    margin: 0 15px;
+}
+
+.nav-user-icon img{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;    
+}
+
+.search-box {
+    /* light gray background */
+    background: #efefef;
+    width: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.search-box img {
+    width: 18px;
+}
+
+.search-box input {
+    /* 100% of 350px */
+    width: 100%;
+    /* have the same color as search-box div */
+    background: transparent;
+    border: 0;
+    outline: 0;
+    /* increase space inside the input element */
+    padding: 10px;
+}
+
+.nav-user-icon {
+    margin-left: 30px;
+}
+
+.online {
+    position: relative;
+}
+
+.online::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border: 2px solid #fff;
+    background: #41db51;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+/* static: positioned according to the normal flow of the document */
+/* relative: can be positioned relative to its original position */
+/* absolute: positioned relative to its nearest positioned ancestor. */
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+}
+
+.container .left-side-bar {
+    /* background: #cbdffa; */
+    /* this flex-item will occupy 25% of the 
+    flex container */
+    flex-basis: 25%;
+    /* this sidebar wont move when the page is scrolled */
+    position: sticky;
+    /* required by sticky */
+    top: 70px;
+    /* crossAxisAlignment: CrossAxisAlignment.start */
+    align-self: flex-start;
+    
+}
+
+.container .right-side-bar {
+    background: var(--bg-color);
+    /* this flex-item will occupy 25% of the 
+    flex container */
+    flex-basis: 25%;
+    /* this sidebar wont move when the page is scrolled */
+    position: sticky;
+    /* required by sticky */
+    top: 70px;
+    /* crossAxisAlignment: CrossAxisAlignment.start */
+    align-self: flex-start;
+    padding: 20px;
+    border-radius: 4px;
+    color: #626262;
+    
+}
+
+/* main content will occupy ~ 50* of screen */
+.main-content {
+    /* 3% is space between the columns. */
+    flex-basis: 47%;
+}
+
+.important-links a, .shortcut-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    color: #626262;
+    width: fit-content;
+}
+
+.important-links a img {
+    width: 25px;
+    margin-right: 15px;
+}
+
+
+.important-links a:last-child {
+    color: #1876f2;
+}
+
+.important-links {
+    /* solid gray color */
+    border-bottom: 1px solid #ccc;
+}
+
+.shortcut-links a img {
+    width: 40px;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.shortcut-links p {
+    margin: 25px 0;
+    /* a shade of gray */
+    color: #626262;
+    /* A font-weight of normal */
+    font-weight: 500;
+}
+
+.right-side-bar .sidebar-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* so as to add some space at the bottom */
+    margin-bottom: 18px;
+} 
+
+.right-side-bar h4 {
+    /* mid-size/normal font */
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.right-side-bar .sidebar-title a {
+    text-decoration: none;
+    color: #1876f2;
+    font-size: 12px;
+}
+
+.event {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.event .left-event {
+    border-radius: 10px;
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.event p {
+    font-size: 12px;
+}
+
+.event a {
+    font-size: 12px;
+    color: #1876f2; 
+    text-decoration: none;
+}
+
+.event .left-event span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1876f2;
+    color: #fff;
+    font-size: 10px;
+    padding: 4px 0; 
+}
+
+.sidebar-ads {
+    /* 100% of 25% flex basis considering
+    padding and margin of the container */
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 4px; 
+}
+
+.online-list {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.online-list .online img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.online-list .online {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.online-list .online::after {
+    top: unset; 
+    bottom: 5px;
+}
+
+.story-gallery {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.story {
+    /* because we adding five story per row */
+    flex-basis: 18%;
+    padding-top: 32%;
+    /* border: 1px solid black; */
+    /* because we want to position a element */
+    position: relative;
+    /*  position the image at the center of the div */
+    background-position: center;
+    /* Similar to ClipRRect */
+    background-size: cover;
+    /* I like curves */
+    border-radius: 10px;
+}
+
+.story img {
+    /* positioned relative to the nearest positioned
+     ancestor */
+    position: absolute;
+    width: 45px;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+    border: 5px solid #1876f2;
+}
+.story p {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.story0 {
+    /* applying an image to a div */
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('images/status-1.png');
+} 
+
+.story1 {
+    /* applying an image to a div */
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('images/status-2.png');
+} 
+
+.story2 {
+    /* applying an image to a div */
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('images/status-3.png');
+} 
+
+.story3 {
+    /* applying an image to a div */
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('images/status-4.png');
+} 
+
+.story4 {
+    /* applying an image to a div */
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.5)), url('images/status-5.png');
+} 
+
+.story.story0 img{
+    top: unset;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+    border: 0;
+    width: 35px;
+}
+
+.write-post-container {
+    /* 100% of flex-basis: 47% */
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    /* inner space */
+    padding: 20px; 
+     /*text color  */
+    color: #626262;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center; 
+}
+
+.user-profile img {
+    border-radius: 50%;
+    width: 45px;
+    margin-right: 10px;
+}
+
+.user-profile  div p {
+    /* decrease the space at the bottom */
+    margin-bottom: -5px;
+    font-weight: 600;
+    color: #626262;
+}
+
+.user-profile  div small {
+    font-size: 12px;
+
+} 
+
+.post-input-container {
+    padding-left: 55px;
+    padding-top: 20px;
+}
+
+.post-input-container textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #ccc;
+    background:transparent;
+    /* remove ability to resize textarea */
+    resize: none;   
+}
+
+.add-post-links {
+    display: flex;
+    margin-top: 10px;
+}
+
+.add-post-links a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    font-size: 13px; 
+}
+
+.add-post-links a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.post-container {
+    width: 100%;
+    background: var(--bg-color);
+    border-radius: 6px;
+    padding: 20px;
+    color: #626262;
+    margin: 20px 0;
+}
+
+.post-container .user-profile span { 
+    font-size: 13px;
+    color: #9a9a9a;
+}
+
+.post-container .user-profile p {
+    margin-bottom: 1px;
+}
+
+.post-container .post-text {
+    color: #9a9a9a;
+    margin: 15px 0;
+    font-size: 15px;
+}
+
+
+.post-container .post-text span {
+    color: #626262;
+    font-size: 500;
+}
+
+.post-container .post-text a {
+    color: #1876f2;
+    text-decoration: none;
+}
+
+.post-container .post-img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.post-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.activity-icons div img {
+    width: 18px;
+    margin-right: 10px;
+
+}
+
+.activity-icons div {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.post-profile-icon {
+    display: flex;
+    align-items: center;
+}
+
+.post-profile-icon img {
+    width: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.post-row a { 
+    color: #9a9a9a;
+}
+
+.load-more-btn {
+    /* no two button or element are on the same line */
+    display: block;
+    /* center the button */
+    margin: auto;
+    cursor: pointer;
+    /* top and bottom is 5px */
+    /* left and right is 10px */
+    padding: 5px 10px;
+    /* both border and color are different shades 
+    of gray */
+    border: 1px solid #9a9a9a;
+    color: #626262;
+    /* background will have the same color as the
+    body tag */
+    background: transparent;
+    /* curves */
+    border-radius: 4px;
+}
+
+.footer {
+    /* border: 1px solid black; */
+    text-align: center;
+    color: #9a9a9a;
+    /* top: 10px */
+    /* right and left: 0 */
+    /* bottom: 20px */
+    padding-top: 10px 0 20px;
+    font-size: 13px;
+}
+
+.settings-menu {
+    /* positioned relative to the nearest positioned 
+    ancestor */
+    position: absolute;
+    /* 90% of 350px */
+    width: 90%;
+    max-width: 350px;
+    background: var(--bg-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    /* i will have to get back to this. */
+    overflow: hidden;
+    top: 108%;
+    right: 5%;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+
+.settings-menu-height {
+    max-height: 450px;  
+}
+
+
+.user-profile a {
+    font-size: 12px; 
+    color: #1876f2;
+    /* remove link underline */
+    text-decoration: none;
+} 
+
+.settings-menu-inner {
+    padding: 20px;
+}
+
+.settings-menu-inner hr {
+    border: 0;
+    height: 1px;
+    background: #9a9a9a;
+    margin: 15px 0; 
+}
+
+.settings-links {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.settings-links .settings-icon{
+    width: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.settings-links a {
+    /* Text and image are now on the same line */
+    display: flex;
+    /* the link will eat up the entire space */
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #626262;
+
+}
+
+#dark-btn {
+    /*  positioned relative to the nearest positioned 
+    ancestor */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ccc;
+    width: 45px;
+    border-radius: 15px;
+    padding: 2px 3px;
+    cursor: pointer;
+    display: flex;
+    transition: padding-left 0.5s, background 0.5s;
+
+}
+
+#dark-btn span {
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#dark-btn.dark-btn-on {
+    padding-left: 23px;
+    background: #0a0a0a;
+}
+
+/* ---------- profile page ---------------- */
+
+.profile-container {
+    border: 1px solid black;
+    /* top and bottom is 20px */
+    /* left and right is 15% */
+    padding: 20px 15%;
+    /* what the use? */
+    color: #626262;
+}
+
+.cover-img {
+    /* occupy only the allowed space */
+    width: 100%;
+    border-radius: 6px;
+    /* allow space at the bottom */
+    margin-bottom: 14px;
+}
+
+
+.profile-details {
+    /* newer format of background-color */
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: 4px;
+    /* flex items are pd-left and pd-right */
+    display: flex;
+    /* similar to crossAxisAlignment: CrossAxisAlignment.start */
+    align-items: flex-start;
+    /* mainAxisAlignment: MainAxisAlignment.spaceBetween */
+    /* create space between pd-left and pd-right */
+    justify-content: space-between;
+}
+
+.pd-row {
+    display: flex;
+    /* we use flex-start although it the default value */
+    /* explicit is better than implicit */
+    align-items: flex-start;
+}
+
+.pd-images {
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 6px;
+}
+
+.pd-row div h3 {
+    /* font size of 25 px */
+    font-size: 25px;
+    /* medium boldness */
+    font-weight: 600;
+}
+
+.pd-row div p {
+    font-size: 13px;
+}
+
+.pd-row div img {
+    /* width of image */
+    width: 25px;
+    /* circular image */
+    border-radius: 50%;
+    margin-top: 12px;
+}
+
+.pd-right button {
+    background: #1876f2;
+    border: 0;
+    outline: 0;
+    /* top and bottom: 6px */
+    /* left and right: 10px */
+    padding: 6px 10px;
+    /* don't have no idea what this is doing. */
+    display: inline-flex;
+    align-items: centers;
+    color: #fff;
+    border-radius: 3px;
+    /* so as to create some space */
+    margin-left: 10px;
+    /* cursor of pointer */
+    cursor: pointer;
+}
+
+.pd-right button img {
+    height: 15px;
+    margin-right: 10px;
+}
+
+.pd-right button:first-child {
+    background: #e4e6eb;
+    color: #000;
+}
+
+.pd-right {
+    text-align: right;
+    border: 1px solid black;
+}
+
+.pd-right a {
+    background: #e4e6eb;
+    border-radius: 3px;
+    padding: 12px;
+    /* applies flex-layout to the flex-items as well as
+    to the container itself */
+    display: inline-flex;
+    margin-top: 30px;
+}
+
+.pd-right a img {
+    width: 20px;
+}
+
+.pd-left {
+    border: 1px solid black;
+}
